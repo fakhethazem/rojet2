@@ -1,0 +1,21 @@
+
+
+<h1> Liste des RDV </h1>
+<table border ="1">
+    <tr>
+        <th>id</th>
+        <th>Voyageur</th>
+        <th>Date</th>
+        <th>Heure</th>
+        <th>Tel</th>
+    </tr>
+    {% for rdv in Rdvs %}
+        <tr>
+            <td>{{rdv.id }}</td>
+            <td>{{ rdv.voyageur.nom }}</td>
+           <td>{{ rdv.date|date('Y-m-d') }}</td>
+            <td>{{ rdv.heure|date('H:i:s') }}</td>
+            <td>{{ rdv.voyageur.tel }}</td>
+        </tr>
+    {% endfor %}
+</table>

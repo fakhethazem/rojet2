@@ -1,0 +1,20 @@
+<h1> Liste des Voyageurs </h1>
+<table border ="1">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>TEL</th>
+        <th>email</th>
+    </tr>
+    {% for voyageur in voyageurs %}
+        <tr>
+            <td>{{voyageur.id }}</td>
+            <td>{{ voyageur.nom }}</td>
+            <td>{{ voyageur.tel }}</td>
+            <td>{{ voyageur.email }}</td>
+            <td>
+                <a href="{{ path('deletevoyage', {'id': voyageur.id}) }}">supprimer</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
